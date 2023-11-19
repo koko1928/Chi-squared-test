@@ -1,17 +1,17 @@
 import scipy.stats as stats
 
-observed_values = [float(input("観測値1を入力してください: ")), float(input("観測値2を入力してください: "))]
+observed_values = [float(input("1つ目の観測値を入力してください: ")), float(input("2つ目の観測値を入力してください: "))]
 
-expected_values = [float(input("期待値1を入力してください: ")), float(input("期待値2を入力してください: "))]
+expected_values = [float(input("1つ目の期待値を入力してください: ")), float(input("2つ目の期待値を入力してください: "))]
 
 alpha = float(input("有意水準を入力してください (通常は0.05を使用します): "))
 
 while sum(observed_values) != sum(expected_values):
     print("観測値と期待値の合計が一致しません。最初からやり直してください。")
     
-    observed_values = [float(input("観測値1を入力してください: ")), float(input("観測値2を入力してください: "))]
-    
-    expected_values = [float(input("期待値1を入力してください: ")), float(input("期待値2を入力してください: "))]
+    observed_values = [float(input("1つ目の観測値を入力してください: ")), float(input("2つ目の観測値を入力してください: "))]
+
+    expected_values = [float(input("1つ目の期待値を入力してください: ")), float(input("2つ目の期待値を入力してください: "))]
 
 chi2_statistic, p_value = stats.chisquare(f_obs=observed_values, f_exp=expected_values)
 
